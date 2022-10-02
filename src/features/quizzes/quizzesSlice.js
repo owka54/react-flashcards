@@ -8,8 +8,8 @@ const quizzesSlice = createSlice({
     },
     reducers: {
         addQuiz: (state, action) => {
-            const {quizId, name, topicId, cardIds} = action;
-            console.log(action.payload);
+            const {quizId, name, topicId, cardIds} = action.payload;
+            // console.log(action.payload);
             state.quizzes[quizId] = {
                 id: quizId,
                 name: name,
@@ -22,9 +22,9 @@ const quizzesSlice = createSlice({
 
 export const addQuizThunk = quiz => {
     const { quizId, name, topicId, cardIds } = quiz;
-    console.log(quiz);
+    // console.log(quiz);
     return (dispatch) => {
-        dispatch(quizzesSlice.actions.addQuiz(quiz));
+        dispatch(addQuiz(quiz));
         dispatch(addQuizId( { quizId: quizId, topicId: topicId }));
     }
 }

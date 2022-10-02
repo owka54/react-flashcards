@@ -8,6 +8,7 @@ export default function Topic() {
   const quizzes = useSelector(quizzesSelector); // replace this with a call to your selector to get all the quizzes in state
   let { quizId } = useParams();
   const quiz = quizzes[quizId];
+  console.log(quiz);
 
   return (
     <section>

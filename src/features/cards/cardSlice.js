@@ -7,12 +7,12 @@ const cardSlice = createSlice({
     },
     reducers: {
         addCard: (state, action) => {
-            const newCard = {
-                id: action.payload.id,
-                front: action.payload.front,
-                back: action.payload.back
-            }
-            state.cards[action.payload.id] = newCard;
+            const { cardId, front, back } = action.payload;
+            state.cards[cardId] = {
+                id: cardId,
+                front: front,
+                back: back
+            };
         }
     }
 });
